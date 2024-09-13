@@ -21,7 +21,7 @@
 
     </div>
 
-    <form hx-post="/api_call.php" hx-trigger="submit" hx-target="#dialogue-box" hx-swap="beforeend"
+    <form hx-post="/drfoeklive/api_call.php" hx-trigger="submit" hx-target="#dialogue-box" hx-swap="beforeend"
         hx-indicator=".indicator">
         <textarea id="query" placeholder="Skriv dit spørgsmål til Dr. Føk" name="query"></textarea>
 
