@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+textarea {
+    display: block;
+
+    &#query {
+        height: 200px;
+        resize: none;
+        overflow-y: scroll;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+}
+
+div#dialogue-box {
+    width: 100%;
+    max-width: 600px;
+
+    .chat {
+        padding: 1rem 1rem;
+        border: 1px solid black;
+        border-radius: 1rem;
+        width: 50%;
+        margin-bottom: 1rem;
+
+        &.query {
+            float: right;
+            background-color: lightgrey;
+        }
+
+        &.response {
+            float: left;
+            background-color: white;
+        }
+    }
+}
+
+.indicator {
+    opacity: 0;
+    text-align: center;
+    transition: margin 1s ease-in-out;
+
+    &.htmx-request {
+        opacity: 1;
+        margin: 2rem 0;
+    }
+}
