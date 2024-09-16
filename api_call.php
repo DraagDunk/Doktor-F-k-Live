@@ -1,9 +1,3 @@
-<div class="query chat">
-    <?php
-    echo $_POST["query"];
-    ?>
-</div>
-
 <div class="response chat">
     <?php
     function callOpenAI($query)

@@ -45,13 +45,23 @@ div#dialogue-box {
     }
 }
 
-.indicator {
+/* HTML: <div class="loader"></div> */
+.loader {
     opacity: 0;
-    text-align: center;
-    transition: margin 1s ease-in-out;
+    width: 60px;
+    aspect-ratio: 8;
+    background: radial-gradient(circle closest-side, #000 90%, #0000) 0/calc(100%/3) 100% space;
+    clip-path: inset(0 100% 0 0);
+    animation: l1 1s steps(4) infinite;
+    margin-bottom: 0.2rem;
 
     &.htmx-request {
         opacity: 1;
-        margin: 2rem 0;
+    }
+}
+
+@keyframes l1 {
+    to {
+        clip-path: inset(0 -34% 0 0)
     }
 }
