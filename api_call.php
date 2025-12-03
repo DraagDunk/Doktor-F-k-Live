@@ -42,8 +42,6 @@
 
         curl_close($ch);
 
-        print_r($response);
-
         return json_decode($response, true);
     }
 
@@ -53,8 +51,10 @@
 
     if ($response["choices"]) {
         echo $response["choices"][0]["message"]["content"];
+    } elseif ($response["error"]["code"]=="insufficient_quota") {
+        echo "Jeg får ikke penge nok for det her.";
     } else {
-        echo $response;
+        echo $response["error"]["message"];
     }
 
     
