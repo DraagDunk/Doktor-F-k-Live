@@ -3,6 +3,7 @@
     function callOpenAI($query)
     {
         $apiKey = getenv("OPENAI_KEY");
+
         $url = "https://api.openai.com/v1/chat/completions";
 
         $headers = [
@@ -41,6 +42,8 @@
 
         curl_close($ch);
 
+        print_r($response);
+
         return json_decode($response, true);
     }
 
@@ -48,7 +51,12 @@
 
     $response = callOpenAI($query);
 
-    echo $response["choices"][0]["message"]["content"];
+    if ($response["choices"]) {
+        echo $response["choices"][0]["message"]["content"];
+    } else {
+        echo $response;
+    }
 
+    
     ?>
 </div>
